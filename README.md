@@ -4,7 +4,7 @@ https://firebase.google.com/docs/admin/setup
 
 ## 環境起動 Dockerコンテナ内で
 ```
-python3 manage.py runserver 0.0.0.0:8000
+python3 backend/manage.py runserver 0.0.0.0:8000
 
 ```
 
