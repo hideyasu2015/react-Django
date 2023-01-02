@@ -1,0 +1,24 @@
+# 開発環境用
+
+version: '3'
+
+services:
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: react-test
+    volumes:
+      - .:/code
+
+    working_dir: /code
+    tty: true
+
+    # ================= docker起動時 =================
+
+    # load env into system
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+   
