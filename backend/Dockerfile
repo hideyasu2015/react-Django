@@ -5,7 +5,7 @@
 FROM python:3
 ENV PYTHONUNBUFFERED 1
 
-WORKDIR /code
+WORKDIR /back_code
 
 # # Install System dependencies
 RUN apt-get update && apt-get install --no-install-recommends -y \
@@ -13,9 +13,9 @@ RUN apt-get update && apt-get install --no-install-recommends -y \
    && rm -rf /var/lib/apt/lists/*
 
 # Install Python dependencies
-COPY requirements.txt /code/
+COPY requirements.txt /back_code/
 RUN pip install -r requirements.txt
 
-COPY . /code/
+COPY . /back_code/
 
 
