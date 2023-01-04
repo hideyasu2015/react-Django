@@ -172,3 +172,14 @@ SOCIALACCOUNT_PROVIDERS = {
         }
     }
 }
+
+# ====================== allauth ======================
+
+ACCOUNT_ADAPTER = 'backend.allauth.adapters.AccountAdapter'
+
+# allauthのログイン後に、リダイレクトできる外部サイトのリスト
+# Frontendへのリダイレクトを許可している
+ALLAUTH_ALLOWED_REDIRECT_HOSTS = [
+    'localhost:3000'
+]
+

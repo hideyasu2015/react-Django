@@ -76,10 +76,6 @@ class App extends Component {
       <div>
         <div className="row">
           <h1>My Google OAuth Project </h1>
-          <div>
-      <a href="http://localhost:8000/accounts/login/google/?next=http://localhost:3000/">Google login</a>
-              {/* <Link to='/accounts/login/' >Google login</Link> */}
-          </div>
         </div>
         <div className="nav nav-tabs">
           <span
@@ -145,11 +141,15 @@ class App extends Component {
             <div className="card p-3">
               <div className="mb-4">
                 <button
-                  className="btn btn-primary"
+                  className="btn btn-primary mr-2"
                   onClick={this.createItem}
                 >
                   Add task
                 </button>
+
+                <a href="http://localhost:8000/accounts/google/login?next=http://localhost:3000/"
+                  class="btn btn-primary"
+                >Google login</a>
               </div>
               {this.renderTabList()}
               <ul className="list-group list-group-flush border-top-0">
