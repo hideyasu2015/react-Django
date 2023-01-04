@@ -4,14 +4,36 @@ import 'bootstrap/dist/css/bootstrap.css';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Root from "./routes/root";
+import ErrorPage from "./error-page";
 import axios from 'axios';
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 
 // Axios global settings
 axios.defaults.baseURL = 'http://localhost:8000';
 
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Root />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: "/",
+        element: <App />,
+      },
+    ],
+  },
+]);
+
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    {/* <App /> */}
+    <RouterProvider router={router} />
   </React.StrictMode>,
   document.getElementById('root')
 );

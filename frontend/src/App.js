@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Modal from "./components/Modal";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 class App extends Component {
   constructor(props) {
@@ -72,19 +73,28 @@ class App extends Component {
 
   renderTabList = () => {
     return (
-      <div className="nav nav-tabs">
-        <span
-          onClick={() => this.displayCompleted(true)}
-          className={this.state.viewCompleted ? "nav-link active" : "nav-link"}
-        >
-          Complete
-        </span>
-        <span
-          onClick={() => this.displayCompleted(false)}
-          className={this.state.viewCompleted ? "nav-link" : "nav-link active"}
-        >
-          Incomplete
-        </span>
+      <div>
+        <div className="row">
+          <h1>My Google OAuth Project </h1>
+          <div>
+      <a href="http://localhost:8000/accounts/login/google/?next=http://localhost:3000/">Google login</a>
+              {/* <Link to='/accounts/login/' >Google login</Link> */}
+          </div>
+        </div>
+        <div className="nav nav-tabs">
+          <span
+            onClick={() => this.displayCompleted(true)}
+            className={this.state.viewCompleted ? "nav-link active" : "nav-link"}
+          >
+            Complete
+          </span>
+          <span
+            onClick={() => this.displayCompleted(false)}
+            className={this.state.viewCompleted ? "nav-link" : "nav-link active"}
+          >
+            Incomplete
+          </span>
+        </div>
       </div>
     );
   };
