@@ -50,26 +50,3 @@ python3 manage.py migrate
 ## GOOGLE MAP DOCUMENT
 https://developers.google.com/maps/documentation/javascript/adding-a-google-map?hl=ja#maps_add_map-html
 
-
-{% comment %} $.ajax({
- url: url,
- type: "POST",
- data: {
- polygon: polygonCoords,
- },success: function (result) {
- alert("firebaseに保存しました");
- }
- }); {% endcomment %}
-
-     submitButton.addEventListener("click", (event) => {
-      console.log("click");
-        
-      {% autoescape off %}
-      const url = "{% url 'mapapp:polygon-page' %}";
-      {% endautoescape %}
-     
-     
-    }
-      
-    console.log("polygonCoords is =>", polygonCoords);
-    console.log("polygon is =>", polygon);
